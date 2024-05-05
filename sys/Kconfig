@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: Apache-2.0
+
+menu "Zephyr Fatal Error Policy"
+
+rsource "fatal_error/Kconfig"
+
+endmenu

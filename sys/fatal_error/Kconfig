@@ -1,0 +1,11 @@
+
+config SYS_FATAL_ERROR
+	bool "System fatal error handlers"
+	# default y if !RESET_ON_FATAL_ERROR
+	# depends on !RESET_ON_FATAL_ERROR
+	help
+	  Selects system fatal error handlers.
+
+module = SYS_FATAL_ERROR
+module-str = System fatal error
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
