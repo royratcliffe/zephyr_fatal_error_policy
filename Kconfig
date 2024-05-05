@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: Apache-2.0
+
+menu "Zephyr OS"
+
+rsource "sys/Kconfig"
+
+endmenu
+
+source "Kconfig.zephyr"

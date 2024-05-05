@@ -1,0 +1,9 @@
+
+config SYS_FATAL_ERROR
+	bool "System fatal error handlers"
+	help
+	  Selects system fatal error handlers.
+
+module = SYS_FATAL_ERROR
+module-str = system fatal error
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"

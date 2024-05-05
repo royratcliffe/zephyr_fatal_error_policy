@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.conf": "kconfig",
+        "*.h": "c"
+    },
+    "C_Cpp.clang_format_fallbackStyle": "LLVM"
+}
