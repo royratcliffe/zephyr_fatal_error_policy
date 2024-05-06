@@ -1,6 +1,6 @@
 # Zephyr Fatal Error Policy
 
-Zephyr Zephyr Project ([2024b](#ref-ZephyrRTOS)) is a very useful Real-Time Operating System. Just like most operating systems of the embedded variety, Zephyr halts on a fatal error. This works well in most cases but not in all situations, particularly in hazardous embedded environs.
+The [Zephyr Project](https://www.zephyrproject.org/) is a very useful Real-Time Operating System. Just like most operating systems of the embedded variety, Zephyr halts on a fatal error. This works well in most cases but not in all situations, particularly in hazardous embedded environs.
 
 Fatal errors include:
 
@@ -53,7 +53,7 @@ This configuration reverts to the default 'weak' Zephyr handler.
 
 ## Custom Fatal Error Handlers
 
-The idea is to set up an "iterable section" ([Zephyr Project 2024a](#ref-ZephyrAPI)) of decoupled system fatal error handlers---zero or more function pointers to mandatory fatal safety procedures. Whenever fatal errors occur, the primary handler first invokes the special section before logging the error and either halting the system or rebooting it.
+The idea is to set up an "iterable section" (see [Zephyr API](https://docs.zephyrproject.org/latest/index.html)) of decoupled system fatal error handlers---zero or more function pointers to mandatory fatal safety procedures. Whenever fatal errors occur, the primary handler first invokes the special section before logging the error and either halting the system or rebooting it.
 
 How does it work? The application defines one or more fatal error handlers using a `SYS_FATAL_ERROR_DEFINE` macro. The replacement fatal error handler will promptly invoke them all, one by one, on critical errors. Find the full implementation on [GitHub](https://github.com/royratcliffe/zephyr_fatal_error_policy/blob/main/include/sys/fatal_error.h). It includes a new `sys/fatal_error.h` header file. Extract below. The macro adds a handler structure to the fatal error section.
 
@@ -130,9 +130,3 @@ In summary, the system fault handler has a crucial safety role by executing pre-
 The safety features represent what the author would want the software to do if using such equipment personally. You might call me overly-scrupulous.
 
 > "If you prick us, do we not bleed?"---William Shakespeare
-
-## Bibliography
-
-Zephyr Project. 2024a. "API Documentation." <https://docs.zephyrproject.org/latest/index.html>.
-
-Zephyr Project. 2024b. "Zephyr RTOS." <https://www.zephyrproject.org/>.
