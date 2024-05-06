@@ -1,6 +1,6 @@
 # Zephyr Fatal Error Policy
 
-The [Zephyr Project](https://www.zephyrproject.org/) is a very useful Real-Time Operating System. Just like most operating systems of the embedded variety, Zephyr halts on a fatal error. This works well in most cases but not in all situations, particularly in hazardous embedded environs.
+[Zephyr](https://www.zephyrproject.org/) is a very useful Real-Time Operating System. Just like most operating systems of the embedded variety, Zephyr halts on a fatal error. This works well in most cases but not in all situations, particularly in hazardous embedded environs.
 
 Fatal errors include:
 
