@@ -39,9 +39,9 @@ There is a problem here, however. Logging when controlling hazardous equipment t
 
 ### Nordic Policy
 
-Nordic's [nRF Connect SDK]() uses Zephyr RTOS but adds some customisations, including fatal error handling.
+Nordic's [nRF Connect SDK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/index.html) uses Zephyr RTOS but adds some customisations, including fatal error handling.
 
-[Nordic's version]() of the Zephyr kernel's default fault handler has two alternative execution paths: two approaches depending on `CONFIG_RESET_ON_FATAL_ERROR`. Either the system halts *or* reboots in nRFxxx kernels. Kernel "oops" behaviour triggers a hard fault, switching the kernel to panic mode. The kernel logs an error and either reboots or halts. The same limitation exists for Nordic's SDK, regardless of which halt-or-reset choice the firmware developer takes.
+[Nordic's version](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/libraries/security/fatal_error.html) of the Zephyr kernel's default fault handler has two alternative execution paths: two approaches depending on `CONFIG_RESET_ON_FATAL_ERROR`. Either the system halts *or* reboots in nRFxxx kernels. Kernel "oops" behaviour triggers a hard fault, switching the kernel to panic mode. The kernel logs an error and either reboots or halts. The same limitation exists for Nordic's SDK, regardless of which halt-or-reset choice the firmware developer takes.
 
 Nordic defines their policy *strongly*; the developer *cannot* override it. The project configuration `prj.conf` can switch off the strong-override fatal-error handler by including:
 
